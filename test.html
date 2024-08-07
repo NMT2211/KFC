@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        nav, footer {
+            height: 54px;
+            background-color: black;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 54px;
+            box-shadow: 0 0 5px gray;
+        }
+        a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+        .list_sp {
+            margin-top: 10px;
+        }
+        .sp {
+            width: calc(25% - 20px);
+            text-align: center;
+            box-shadow: 0 0 5px gray;
+            padding: 15px;
+            border-radius: 15px;
+            float: left;
+            margin: 10px;
+        }
+        input {
+            width: 50px;
+        }
+        footer h3 {
+            color: #fff;
+        }
+        span {
+            color: #fff;
+            font-size: larger;
+        }
+        #cart{
+            position: relative;
+            display: none;
+        }
+        table {
+            width: 600px;
+            border: 1px solid black;
+            position: absolute;
+            border-collapse: collapse;
+            right: 0;
+            top: -520px;
+            background-color: wheat;
+            
+        }
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+
+        }
+        table img {
+            width: 100px;
+            height: auto;
+        }
+        .input {
+            text-align: center;
+            padding: 5px;
+            font-size: 16px;
+            border: none;
+
+        }
+
+        .slider{
+           
+            display: flex;
+            box-shadow:  0 0 5px gray;
+            padding: 10px;
+            align-items: center;
+        }
+        .text {
+            width: 50%;
+            text-align: center;
+            align-items: center;
+            margin: 0 auto;
+            color: #f10000;
+
+        }
+        .text a{
+            color: #fff;
+            padding: 5px 10px;
+            background-color: gold;
+            border-radius: 10px;
+            box-shadow: 0 0 5px gray;
+        }
+        .text a:hover{
+            background-color: #fff;
+            color: #f10000
+        }
+        .img {
+            width: 50%;    
+            position: relative;
+        }
+        .fa-circle-left{
+            position: absolute;
+            left: 10px;
+            top: 45%;
+            font-size: 30px;
+            color: #f10000;
+        }
+        .fa-circle-right{
+            position: absolute;
+            right: 10px;
+            top: 45%;
+            font-size: 30px;
+            color: #ff0000;
+        }
+        .fa-circle-left:hover{
+            color: #fff;
+        }
+        .fa-circle-right:hover{
+            color: #fff;
+        }
+
+        .img img {
+            width: 100%;
+            height: auto;
+        }
+        i{
+            color: #f10000;
+            cursor: pointer;
+        }
+
+        .sale{
+            display: flex;
+            border: #f10000 1px solid;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px gray;
+            
+        }
+        .sale img{
+            width: 30px;
+            height: 30px;
+        }
+        .time span{
+            padding: 15px;
+            background-color: #f10000;
+            color: yellow;
+            
+        }
+        .time{
+            display: flex;
+            gap: 20px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+    <nav>
+        <a href="">Trang chủ</a>
+        <a href="">Sản phẩm</a>
+        <span>Giỏ hàng <i class="fa-solid fa-bag-shopping"></i></a>
+        <span id="item"></span>
+        <span id="user"></span>
+        <div class="cart-container">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge">3</span>
+        </div>
+        
+    </nav>
+    
+    <div class="slider">
+        <h1 class="text">
+            <p id="chu"></p>
+            <br><br> <a href="">Xem Chi Tiết</a>
+        </h1>
+
+
+        <div class="img">
+            <i class="fa-solid fa-circle-left" onclick="prev()"></i>
+            <!-- <img src="img/banner-1.jpg"> -->
+            <img src="img/food1.jpg" id="hinh">
+            <i class="fa-solid fa-circle-right" onclick="next()"></i>
+            
+        </div>
+
+
+    </div>
+
+    <div id="cart">
+
+
+        <table>
+            <tr>
+                <td colspan="6"><i class="fa-regular fa-rectangle-xmark"></i></td>
+            </tr>
+            <tr>
+                <td>STT</td>
+                <td>Hình sp</td>
+                <td>Tên SP</td>
+                <td>Giá SP</td>
+                <td>Số lượng</td>
+                <td>Thành tiền</td>
+                <td>Xóa</td>
+            </tr>
+            <tbody id="tb">
+                <tr>
+                    <td colspan="7">Không có sản phẩm nào trong giỏ hàng</td>
+                </tr>
+    
+            </tbody>
+            <tr>
+                <td colspan="5">Tổng Tiền: </td>
+                <td id="total"></td>
+            </tr>
+        </table>
+    </div>
+    
+    <main>
+        
+        <section>
+            <h1 class="sale">
+                <div>Khuyến mãi</div>
+                <div class="time">
+                    <img src="img/sale.png" alt="" >
+                    <span id="ngay">00</span>Ngày
+                    <span id="gio">00</span>Giờ
+                    <span id="phut">00</span>Phút
+                    <span id="giay">00</span>Giây
+
+                </div>
+            </h1>
+            <div id="khuyenmai">
+
+            </div>  
+            <div style="clear: both;"></div> 
+
+        </section><hr>
+
+
+        <section>
+            <h1>Sản phẩm</h1>
+           <div class="list_sp" id="list_sp">
+            
+                
+           </div>
+           <div style="clear: both;"></div>
+        </section>
+
+        
+
+
+    </main>
+    <footer>
+        
+        <h3>
+            JS cơ bản - Họ tên sinh viên
+        </h3>
+    </footer>
+</div>
+
+
+
+    <script>
+        const khuyenMai = [
+            {hinh: "img/pd-1.jpg", tensp: "Sản phẩm 1", gia: 300000},
+            {hinh: "img/pd-2.jpg", tensp: "Sản phẩm 2", gia: 400000},
+            {hinh: "img/pd-3.jpg", tensp: "Sản phẩm 3", gia: 500000},
+            {hinh: "img/pd-4.jpg", tensp: "Sản phẩm 4", gia: 600000},
+            {hinh: "img/pd-1.jpg", tensp: "Sản phẩm 1", gia: 300000},
+            {hinh: "img/pd-2.jpg", tensp: "Sản phẩm 2", gia: 400000},
+            
+        ]
+        let km=''
+        for(let i=0; i<khuyenMai.length; i++){
+            km += `
+                <div class="sp">
+                        <img src="${khuyenMai[i].hinh}" alt="">
+                        <h4>${khuyenMai[i].tensp}</h4>
+                        <h4>${khuyenMai[i].gia}</h4>
+                        <input type="number" name="" id="" min="1" value="1">
+                        <button onclick="addCart(this)">Mua ngay</button>
+                    </div>
+            `
+        }
+        document.getElementById('khuyenmai').innerHTML = km;
+
+
+
+
+
+
+        const list_product = [
+            {hinh: "img/pd-1.jpg", tensp: "Sản phẩm 1", gia: 300000},
+            {hinh: "img/pd-2.jpg", tensp: "Sản phẩm 2", gia: 400000},
+            {hinh: "img/pd-3.jpg", tensp: "Sản phẩm 3", gia: 500000},
+            {hinh: "img/pd-4.jpg", tensp: "Sản phẩm 4", gia: 600000},
+            {hinh: "img/pd-5.jpg", tensp: "Sản phẩm 5", gia: 700000},
+            {hinh: "img/pd-6.jpg", tensp: "Sản phẩm 6", gia: 800000},
+        ]
+
+        let str=''
+        for(let i=0; i<list_product.length; i++){
+            str += `
+                <div class="sp">
+                        <img src="${list_product[i].hinh}" alt="">
+                        <h4>${list_product[i].tensp}</h4>
+                        <h4>${list_product[i].gia}</h4>
+                        <input type="number" name="" id="" min="1" value="1">
+                        <button onclick="addCart(this)">Mua ngay</button>
+                    </div>
+            `
+        }
+        document.getElementById('list_sp').innerHTML = str;
+
+        const cart = [] // mảng lưu giỏ hàng
+        //ham them sp vao gio hang
+        function addCart(button){
+            let div = button.parentElement.children; // lấy ra các thẻ con của div
+            let hinh = div[0].src;
+            let tensp = div[1].innerHTML;
+            let gia = div[2].innerHTML;
+            let sl = div[3].value;
+
+            sl = parseInt(sl);
+            
+            const item = [hinh, tensp, gia, sl]; // luu thong tin sp vao mang item
+            let check = true; // check xem sp da co trong gio hang chua
+                for(let i=0; i<cart.length; i++){
+                    if(cart[i][1] == item[1]){
+                        check = false;
+                        sl += cart[i][3];
+                        cart[i][3] = sl;
+                        break;
+                    }
+                }
+
+                if(check == true){
+                    cart.push(item);// them sp vao gio hang
+                }
+
+            
+
+            console.log(cart);
+            show_cart();
+        }
+
+
+        // show gio hang
+        function show_cart(){
+
+            let row = '';
+            let total = 0;
+            for(let i=0; i<cart.length; i++){
+                let thanhtien = cart[i][3] * cart[i][2];
+                row += `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td><img src="${cart[i][0]}" alt="Product Image"></td>
+                        <td>${cart[i][1]}</td>
+                        <td>${cart[i][2]}</td>
+                        <td><input type='number' min=1 value='${cart[i][3]}' onchange="updateCart(this, ${i})" ></td>
+                        <td>${thanhtien.toLocaleString('de-DE')}</td>
+                        <td><i class="fa-solid fa-user-xmark" onclick="del(this,${i})"></i></td>
+                    </tr>
+
+                    `
+                total += thanhtien;
+            }
+            document.getElementById('total').innerHTML = total.toLocaleString('de-DE') + ' VND';
+            document.getElementById('tb').innerHTML = row;
+
+        }
+
+        // ham hien thi gio hang
+        let open_cart = document.querySelector('.fa-bag-shopping');
+        let close_cart = document.querySelector('.fa-rectangle-xmark');
+
+        //hien gio hang
+        open_cart.addEventListener('click', function(){
+            document.getElementById('cart').style.display = 'block';
+
+        });
+
+        close_cart.addEventListener('click', function(){
+            document.getElementById('cart').style.display = 'none';
+
+        });
+
+
+        //slider
+        const hinh = [
+            'food1.jpg','food2.jpg','food3.jpg','food4.jpg'
+        ]
+        const mota = [
+            'Mô tả 1','Mô tả 2','Mô tả 3','Mô tả 4'
+        ]
+
+        let i = 0
+        //nuts next
+        function next(){
+            i++;
+            if(i == hinh.length){
+                i = 0;
+            }
+            document.getElementById('hinh').src = `img/${hinh[i]}`;
+            document.getElementById('chu').innerHTML = mota[i];
+            
+        }
+        function prev(){
+            i--;
+            if(i < 0) i = hinh.length - 1;
+            document.getElementById('hinh').src = `img/${hinh[i]}`;
+            document.getElementById('chu').innerHTML = mota[i];
+        }
+        setInterval(next, 3000);
+
+        //ham xoa sp trong gio hang
+        function del(x,i){
+            let tr = x.parentElement.parentElement;
+            tr.remove()
+            cart.splice(i,1);
+            show_cart();
+
+        }
+
+        function updateCart(x,i){
+
+            cart[i][3] = x.value;
+            show_cart();
+        }
+
+        
+            let user = JSON.parse(localStorage.getItem('user'))
+            
+            document.getElementById('user').innerHTML = user[0]
+
+
+        //sale
+        let countdown = setInterval(
+            function(){
+                let saleDateInput = new Date("2024-08-03 13:31:00").getTime()// Ngày kết thúc sale (thay
+                
+                let newDate = new Date().getTime()// Ngày hiện tại
+                let timeKM = saleDateInput - newDate;
+                // Tính thời gian còn lại (tính bằng mili giây)
+                let days = Math.floor(timeKM / (1000 * 60 * 60 * 24)); // Số ngày còn lại
+                let hours = Math.floor(timeKM  / (1000 * 60 * 60)); // Số giờ còn lại (lấy phần dư sau khi đã trừ đi số ngày)
+                let minutes = Math.floor(timeKM / (1000 * 60)); // Số phút còn lại
+                let seconds = Math.floor(timeKM / 1000); // Số giây còn lại
+
+                //
+                
+                hours %= 24; // Lấy phần dư sau khi đã trừ đi số giờ còn lại trong ngày
+                minutes %= 60; // Lấy phần dư sau khi đã trừ đi số phút còn lại trong giờ
+                seconds %= 60; // Lấy phần dư sau khi đã trừ đi số giây còn lại trong phút
+                // Hiển thị thời gian còn lại trên trang web (thay '#countdown' bằng ID của phần tử hiển thị thời gian còn lại)
+
+                document.getElementById("ngay").innerHTML = days 
+                document.getElementById("gio").innerHTML = hours
+                document.getElementById("phut").innerHTML = minutes
+                document.getElementById("giay").innerHTML = seconds
+
+                console.log(timeKM);
+                
+
+                if(timeKM < 0){
+                    clearInterval(countdown)
+                    document.getElementById("ngay").innerHTML = '00'
+                        document.getElementById("gio").innerHTML = '00'
+                        document.getElementById("phut").innerHTML = '00'
+                        document.getElementById("giay").innerHTML = '00'
+                }
+
+            },1000
+        )
+
+        //duwng dem
+        
+       
+
+    
+            
+
+    </script>
+    
+
+</body>
+</html>

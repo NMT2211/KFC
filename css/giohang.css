@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,200;1,400;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Chiều cao toàn bộ trang */
+    background-color: #ffffff;
+    width: 100%;
+}
+
+#wrapper {
+    /* Kích thước màn hình là 1280 x 720 */
+    width: 100%;
+    height: 100vh;
+    
+    padding-top: 100px;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    width: 100%;
+    height: 80px;
+    top: 0px;
+    z-index: 1000; /* Đảm bảo header nằm trên cùng */
+    background-color: white; /* Thêm màu nền để ngăn nội dung phía dưới hiển thị */
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 6px rgba(88, 86, 86, 0.1);
+}
+
+#header {
+    display: flex;
+    justify-content: space-between; /* Căn các phần tử ra hai bên */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    width: 70%; /* Chiếm 80% chiều rộng của phần tử cha */
+    margin: 0 auto; /* Để nằm giữa trang */
+    
+}
+
+#header .button {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #000000;
+    border-radius: 50px;
+    font-size: large;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+}
+#header .button:hover{
+    background-color: red;
+    color: #ffffff;
+    border: none;
+}
+
+.back {
+    flex: 1; /* Chiếm không gian còn lại */
+    display: flex;
+    justify-content: flex-start; /* Đẩy phần tử con sang bên trái */
+}
+
+.logo {
+    flex: 1; /* Chiếm không gian còn lại */
+    display: flex;
+    justify-content: center; /* Đẩy phần tử con vào giữa */
+}
+
+#actions {
+    flex: 1; /* Chiếm không gian còn lại */
+    display: flex;
+    justify-content: flex-end; /* Đẩy phần tử con sang bên phải */
+}
+
+#actions .item {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+
+#checkout-btn {
+    background-color: #4CAF50; /* Màu nền */
+    color: white; /* Màu chữ */
+    padding: 10px 20px; /* Kích thước nút */
+    border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo góc */
+    cursor: pointer;
+    
+    font-size: 10px;
+    margin-right: 80px;
+}
+
+#checkout-btn:hover {
+    background-color: #45a049; /* Màu nền khi di chuột qua */
+}
+
+/* Đảm bảo các lớp CSS từ chitietsp.css cũng có mặt trong giohang.css */
+
+.cart-items {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-items img {
+    width: 200px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.cart-items h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-items p {
+    margin: 5px 0;
+}
+
+#cart-wrapper {
+    width: 750px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+#cart-wrapper a {
+    text-decoration: none;
+}
+
+
+.giua {
+    position: relative; /* Để các phần tử con được căn chỉnh dựa trên phần tử này nếu cần */
+    overflow: auto; /* Đảm bảo cuộn trong div */
+    padding: 20px; /* Thêm khoảng cách xung quanh nội dung nếu cần */
+    
+}
+
+
+
+.from_tongtien {
+    position: relative; 
+    top: 20px; /* Khoảng cách từ đỉnh của phần tử cha */
+    width: 350px;
+    height: auto; /* Để chiều cao tự động điều chỉnh theo nội dung */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Đảm bảo phần tử nằm trên các phần tử khác */
+}
+
+
+.from_tongtien h2{
+    text-align: left;
+    margin: 15px;
+}
+.from_tongtien  hr{
+    border: none; /* Loại bỏ đường kẻ mặc định của <hr> */
+    border-top: 1px solid rgba(136, 135, 135, 0.3); /* Tạo đường kẻ ngang liền và mờ */
+}
+.from_tongtien h4{
+    margin: 15px 0px;
+
+}
+
+.magiamgia {
+    display: flex;
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    margin-bottom: 40px;
+}
+
+.magiamgia input[type="text"] {
+    border: none; 
+    border-bottom: 1px solid #ccc; 
+    padding: 10px; 
+    font-size: 14px; 
+    box-shadow: none; 
+    outline: none; 
+    
+}
+
+.magiamgia input[type="text"]:hover {
+    border-bottom: 2px solid #ccc;
+    border-color: #ed1f1f;
+}
+
+.magiamgia input[type="text"]:focus {
+    border-bottom: 2px solid #ccc;
+    border-color: #ed1f1f;
+}
+
+.magiamgia button {
+    margin-left: 20px; /* Đặt khoảng cách giữa trường nhập liệu và nút */
+    border-radius: 30px;
+    background-color: #303030; /* Màu nền */
+    color: white;
+    padding: 8px 15px; /* Kích thước nút */
+}
+
+.tien p {
+    
+    display: flex;
+    justify-content: space-between; /* Đặt khoảng cách giữa các phần tử con */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    margin: 15px 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.tien p span {
+    text-align: right;
+    margin-left: 10px; /* Thêm khoảng cách giữa văn bản và số tiền nếu cần */
+    font-size: 16px;
+}
+
+.thanhtoanbtn{
+    display: flex;
+    justify-content: space-between; /* Đặt khoảng cách giữa các phần tử con */
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 15px;
+    background-color: #f71818; /* Màu nền**/
+    color: white; /* Màu chữ**/
+    border: none; /* Loại bỏ đường viền**/
+    cursor: pointer; /* Hiển thị con trỏ khi di chuột qua**/
+    font-size: 16px; /* Kích thước chữ**/
+    border-radius: 50px; /* Bo góc**/
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng**/
+}
+.thanhtoanbtn:hover{
+    background-color: #c9302c; /* Màu nền khi di chuột qua**/
+}
+
+
+
+.giua{
+    
+    width: 90%;
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    margin: 10px;
+    text-decoration: none;
+    
+}
+
+
+
+#clear-cart {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #db0700;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    
+}
+
+#clear-cart:hover {
+    background-color: #c9302c;
+}
+
+
+#footer {
+    width: 100%;
+    background: rgba(23, 23, 23, 0.822);
+}
+
+.mucluc {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+}
+
+input.so-luong {
+    width: 50px; 
+    padding: 5px; 
+    text-align: center;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    
+}
+
+
+.fa-minus, .fa-plus {
+    cursor: pointer;
+    color: #db0700;
+}
+.fa-minus:hover, .fa-plus:hover{
+    color: #660704;
+}
+
+
+
+
+
+
+.cart-items div {
+    flex-grow: 1;
+    width: 80%;
+}
+.cart-items button{
+    width: 50px;
+    height: 25px;
+    background-color: #f43029;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    right: 0px;
+}
+
+.mota{
+    color: #757575;
+    font-size: 12px;
+}
+
+
+
+
+
+.widget {
+    flex: 1;
+    margin: 10px;
+    min-width: 180px; /* Đảm bảo các widget không quá nhỏ */
+}
+
+.widget h4 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.widget ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.widget ul li a {
+    color: #ccc; /* Màu nhạt hơn h4 */
+    font-size: 14px; /* Kích thước nhỏ hơn h4 */
+    text-decoration: none;
+}
+
+.widget ul li a:hover {
+    color: #fff; /* Màu trắng khi hover */
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    color: #ccc;
+}
+#footer .mucluc{
+    margin-top: 50px;
+}
+/* Phần đường kẻ */
+#footer hr {
+    width: 80%;
+    margin: auto; /* Căn giữa */
+    border-color: #ccc; /* Màu sắc của đường kẻ */
+    
+}
+
+.thongtinLH {
+    width: 80%;
+    margin: auto; /* Căn giữa container */
+    display: flex;
+    justify-content: space-between; /* Phân bố các phần tử đều trên chiều ngang */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+}
+
+.box1 {
+    flex: 1; /* Đảm bảo box1 chiếm không gian còn lại */
+    color: rgba(255, 255, 255, 0.575);
+}
+
+.box2 {
+    display: flex;
+    justify-content: flex-end; /* Đưa ảnh sát bên phải */
+    align-items: center; /* Căn giữa hình ảnh theo chiều dọc */
+    flex: 0 0 auto; /* Đảm bảo box2 có kích thước tự động dựa trên nội dung */
+}
+
+.box2 img {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước của box2 */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+}
+

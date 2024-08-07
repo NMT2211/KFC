@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container-dangky {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.logo-dangky img {
+    margin-bottom: 20px;
+}
+
+.form-dangky h2 {
+    margin-bottom: 20px;
+}
+
+.nho-dangky {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.nho-dangky label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.nho-dangky input {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.nho-dangky button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d70f64;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nho-dangky button:hover {
+    background-color: #b50950;
+}
+
+.nho-dangky a {
+    color: #d70f64;
+    text-decoration: none;
+}
+
+.nho-dangky a:hover {
+    text-decoration: underline;
+}

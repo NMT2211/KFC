@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="icon" href="assets/kfc-logo.svg" type="image/x-icon">
+    
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    
+    <div class="login-container">
+        <div class="login-logo">
+            <a href="index.html"> <img src="assets/kfc3.png" alt="KFC Logo" width="200"></a>
+           
+        </div>
+        <div class="login-form">
+            <h2>Đăng nhập</h2>
+            <form id="loginForm" action="profile.html" method="POST">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" onclick="login()">Đăng nhập</button>
+                </div>
+                <div class="form-group">
+                    <a href="dangky.html">Đăng ký</a> | <a href="forgot-password.html">Quên mật khẩu?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+
+        function login(){
+            event.preventDefault();
+
+            let email = document.getElementById('email').value
+            let password = document.getElementById('password').value
+
+            // Kiểm tra thông tin đăng nhập (thực tế bạn sẽ kiểm tra trong cơ sở dữ liệu)
+            let user = JSON.parse(localStorage.getItem('user')) 
+
+            if (email == user[0] && password == user[1]) {
+                alert('Đăng nhập thành công')
+                window.location.href = 'index.html' // Chuyển hướng đến trang
+            }else{
+                alert('Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.')
+                return false
+            }
+        }
+
+
+    </script>
+</body>
+</html>

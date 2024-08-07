@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="icon" href="assets/kfc-logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/dangky.css">
+</head>
+<body>
+    <div class="container-dangky">
+        <div class="logo-dangky">
+            <a href="index.html"> <img src="assets/kfc3.png" alt="Logo KFC" width="200"></a>
+        </div>
+        <div class="form-dangky">
+            <h2>Đăng ký</h2>
+            <form id="formDangKy" action="welcome.html" method="POST">
+                <div class="nho-dangky">
+                    <label for="ten-nguoi-dung">Tên người dùng</label>
+                    <input type="text" id="ten-nguoi-dung" name="ten-nguoi-dung" required>
+                </div>
+                <div class="nho-dangky">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="nho-dangky">
+                    <label for="mat-khau">Mật khẩu</label>
+                    <input type="password" id="mat-khau" name="mat-khau" required>
+                </div>
+                <div class="nho-dangky">
+                    <label for="xac-nhan-mat-khau">Xác nhận mật khẩu</label>
+                    <input type="password" id="xac-nhan-mat-khau" name="xac-nhan-mat-khau" required>
+                </div>
+                <div class="nho-dangky">
+                    <button type="submit" onclick="dangky()">Đăng ký</button>
+                </div>
+                <div class="nho-dangky">
+                    <a href="login.html">Đăng nhập</a> | <a href="forgot-password.html">Quên mật khẩu?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+
+        function dangky() {
+            event.preventDefault()
+            // Lấy thông tin từ các trường nhập liệu
+            
+            let username = document.getElementById('ten-nguoi-dung').value
+            let email = document.getElementById('email').value
+            let password = document.getElementById('mat-khau').value
+            let confirmPassword = document.getElementById('xac-nhan-mat-khau').value
+
+            // Kiểm tra xác nhận mật khẩu
+            if (username == '') {
+                alert("Vui lòng nhập tên đăng nhập.")
+                return false
+            }
+            if(email == ''){
+                alert("Vui lòng nhập email.")
+                return false
+            }
+            // Kiểm tra định dạng email
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Vui lòng nhập địa chỉ email hợp lệ.');
+                return false;
+            }
+            
+            if (password == '') {
+                alert("Vui lòng nhập mật khẩu.")
+                return false
+            }
+            if (confirmPassword == '') {
+                alert("Vui lòng xác nhận mật khẩu.")
+                return false
+            }
+            if(password.length < 6) {
+                alert("Mật khẩu phải có ít nhất 6 ký tự.")
+                return false
+            }
+            if (password !== confirmPassword) {
+                alert("Mật khẩu xác nhận không khớp. Vui lòng thử lại.")
+                return false
+            }
+
+            const user = [email,password]
+
+            
+
+            localStorage.setItem('user',JSON.stringify(user))
+            alert('Chúc mừng bạn đã đăng ký thành công!');
+            location.href = "login.html"
+            
+        }
+
+
+
+    </script>
+</body>
+</html>

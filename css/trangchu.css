@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,200;1,400;1,500&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+    cursor: pointer;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+    
+
+
+#wrapper {
+    /* Kích thước màn hình là 1280 x 720 */
+    width: 100%;
+    height: 100vh;
+    
+    padding-top: 100px;
+}
+
+#header, #footer {    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#menu, #actions {
+    display: flex;
+}
+
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* Thêm màu nền để ngăn nội dung phía dưới hiển thị */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+#header .logo img{
+    margin-left: 50px;
+}
+
+#actions{
+    margin-right: 50px;
+}
+
+.item {
+    margin: 0 10px; 
+    
+}
+
+/* search */
+#search-container {
+    display: flex;
+    align-items: center;
+
+}
+
+#search-input {
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+#actions button {
+    padding: 5px;
+    font-size: 16px;
+    background-color: #d9232d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#actions button:hover {
+    background-color: #a61c1e;
+}
+
+/*  */
+
+#menu {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa các mục menu */
+    flex: 2;
+    justify-content: flex-start; /* Để menu gần logo */
+}
+
+#menu .item {
+    margin:1px 10px;
+}
+
+#menu .item a {
+    color:black;
+    text-decoration: none;
+    font-size: large;
+}
+#menu .item a:hover {
+    color:red;
+    
+}
+
+
+
+#actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto; /* Đẩy các phần tử trong #actions sang bên phải */
+}
+
+#actions .item {
+    margin-left:auto;
+    
+}
+
+
+
+
+#banner {
+    position: relative;
+    overflow: hidden;
+}
+#banner-menu {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.736);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+#banner-menu .item {
+    display: flex;
+    align-items: center;
+}
+
+#banner-menu .item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#banner-menu .item a img {
+    margin-right: 8px; /* Adjust the margin as needed */
+}
+
+#banner-menu .item a strong {
+    margin: 0;
+}
+
+#banner-menu .item button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+#banner-menu .item button img {
+    margin-right: 8px; /* Điều chỉnh khoảng cách nếu cần */
+}
+
+#banner-menu .item button {
+    padding: 10px 20px;
+    background-color: #f00;
+    color: #fff;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    font-size: large;
+}
+
+
+
+#banner-menu .item button:hover {
+    background-color: #c00;
+}
+
+
+.slider {
+    display: flex;
+
+}
+
+.slider img {
+    flex: 0 0 100%;
+    max-width: 100%;
+    
+}
+.slide img {
+    width: 100%;
+    height: 400;
+    object-fit: contain;
+}
+
+.controls {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transform: translateY(-50%);
+    
+}
+
+.controls button {
+    background: transparent;
+    border: none;
+    font-size: 48px;
+    cursor: pointer;
+    
+}
+
+.prev {
+    position: absolute;
+    left: 10px;
+}
+
+.next {
+    position: absolute;
+    right: 10px;
+}
+
+
+
+.h2 {
+    width: 80%; /* Chiếm 80% chiều rộng màn hình */
+    margin: 0 auto; 
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần tử tự động xuống dòng khi không đủ không gian */
+    
+}
+#menu-section hr{
+    color: #c00;
+}
+
+.danhmuc {
+    width: 80%; /* Chiếm 80% chiều rộng màn hình */
+    margin: 0 auto; /* Căn giữa phần tử */
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần tử tự động xuống dòng khi không đủ không gian */
+    justify-content: center; /* Căn giữa các phần tử con */
+}
+
+.danhmuc img {
+    width: 100%; /* Kích thước hình ảnh chiếm toàn bộ chiều rộng của phần tử cha */
+    max-width: 280px; /* Hạn chế chiều rộng tối đa của hình ảnh */
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.252);
+    
+}
+
+
+.danhmuc-item {
+    width: 280px; 
+    position: relative;
+    margin: 10px;
+    margin-bottom: 55px; 
+    height: 275px; /* Chiều cao cố định của container */
+    
+    overflow: hidden; /* Ẩn phần hình ảnh bị tràn */
+    position: relative;
+    border-radius: 5px;
+
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.252);
+    
+}
+
+
+
+.danhmuc-item img {
+    display: block; 
+    margin-bottom: 0; 
+    object-fit: cover; /* Đảm bảo hình ảnh lấp đầy container mà không bị méo */
+    transition: transform 0.5s ease;
+    
+}
+.danhmuc-item img:hover {
+    transform: scale(1.1); /* Phóng to hình ảnh khi hover */
+}
+
+
+
+.overlay-text {    
+    position: absolute; /* Đặt vị trí tuyệt đối để văn bản nằm trên hình ảnh */
+    margin-top: 0;     
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.252);
+    display: flex; /* Sử dụng flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 0 10px;   
+}
+
+
+
+.menu-combo2 {
+    width: 80%; /* Chiếm 80% chiều rộng màn hình */
+    margin: 0 auto; /* Căn giữa phần tử */
+    display: flex;
+    flex-wrap: nowrap; /* Tắt tính năng tự động xuống dòng */
+    overflow-x: auto; /* Bật thanh cuộn ngang */
+    scroll-snap-type: x mandatory; /* Cung cấp hiệu ứng "snap" khi cuộn */
+    gap: 20px; /* Khoảng cách giữa các combo */
+    padding: 20px;
+}
+
+.combo {
+    flex: 0 0 auto; /* Ngăn các phần tử combo thu nhỏ hoặc giãn rộng để lấp đầy không gian */
+    width: 280px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.201);
+    height: 450px;
+    justify-content: center; /* Căn giữa phần tử combo theo chiều ngang */
+    align-items: center;
+    scroll-snap-align: start; /* Đảm bảo các combo bắt đầu từ đầu phần tử cuộn */
+}
+
+.combo-hinh {
+    width: 95%; 
+    position: relative;
+    height: auto; /* Chiều cao cố định của container */
+    overflow: hidden; /* Ẩn phần hình ảnh bị tràn */
+    position: relative;
+    margin: 8px auto 20px auto; 
+
+    
+}
+
+.combo a{
+    color: #000000;
+    text-decoration: none;
+}
+
+.combo img {
+    width: 100%;
+    display: block; /* Đảm bảo hình ảnh là một phần tử khối */
+    margin: 0 auto; /* Canh giữa hình ảnh theo chiều ngang */
+    padding-top: auto;
+    margin-bottom: 0; 
+    object-fit: cover; /* Đảm bảo hình ảnh lấp đầy container mà không bị méo */
+    transition: transform 0.5s ease;
+}
+
+
+
+.combo img:hover {
+    transform: scale(1.1); /* Phóng to hình ảnh khi hover */
+}
+
+.info {
+    width: 90%;
+    padding: 0%;
+    margin: 0px auto;
+}
+.info p {
+    color: #655f5f;
+    font-size: 15px;
+    height: 65px;
+}
+
+.h4 {
+    float: left;
+    width: 70%; 
+    margin-top: 20px;
+}
+
+.gia-cb {
+    float: right; 
+    margin-top: 20px; 
+}
+
+.combo button {
+    padding: 10px 20px;
+    background-color: #c2bbbb;
+    color: #fff;
+    border-radius: 50px;
+    width: 250px;
+    font-size: large;
+    border: none;
+    margin: 0 auto; /* Căn giữa phần tử */
+    display: flex;
+    justify-content: center;
+    
+}
+.combo button:hover {
+    background-color: rgb(235, 0, 0);
+}
+
+
+
+
+
+
+
+
+.youtube {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+  
+.video-large, .video-small {
+    display: flex;
+    flex-direction: column;
+}
+  
+.video-large {
+    width: 50%;
+    margin-right: 20px; /* Optional: Margin to separate large and small videos */
+}
+  
+  .video-large iframe {
+    width: 100%;
+    height: 489px;
+  }
+  
+  .video-small {
+    width: 30%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px; /* Gap between small videos */
+  }
+  
+  .video-small iframe {
+    width: 100%;
+    height: auto;
+  }
+
+
+
+#footer {
+    width: 100%;
+    background: rgba(23, 23, 23, 0.822);
+}
+
+.mucluc {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.widget {
+    flex: 1;
+    margin: 10px;
+    min-width: 180px; /* Đảm bảo các widget không quá nhỏ */
+}
+
+.widget h4 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.widget ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.widget ul li a {
+    color: #ccc; /* Màu nhạt hơn h4 */
+    font-size: 14px; /* Kích thước nhỏ hơn h4 */
+    text-decoration: none;
+}
+
+.widget ul li a:hover {
+    color: #fff; /* Màu trắng khi hover */
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    color: #ccc;
+}
+#footer .mucluc{
+    margin-top: 50px;
+}
+/* Phần đường kẻ */
+#footer hr {
+    width: 80%;
+    margin: auto; /* Căn giữa */
+    border-color: #ccc; /* Màu sắc của đường kẻ */
+    
+}
+
+
+
+
+
+.thongtinLH {
+    width: 80%;
+    margin: auto; /* Căn giữa container */
+    display: flex;
+    justify-content: space-between; /* Phân bố các phần tử đều trên chiều ngang */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+}
+
+.box1 {
+    flex: 1; /* Đảm bảo box1 chiếm không gian còn lại */
+    color: rgba(255, 255, 255, 0.575);
+}
+
+.box2 {
+    display: flex;
+    justify-content: flex-end; /* Đưa ảnh sát bên phải */
+    align-items: center; /* Căn giữa hình ảnh theo chiều dọc */
+    flex: 0 0 auto; /* Đảm bảo box2 có kích thước tự động dựa trên nội dung */
+}
+
+.box2 img {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước của box2 */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+}
+
+
+
+

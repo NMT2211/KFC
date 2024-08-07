@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <link rel="icon" href="assets/kfc-logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/giohang.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .fa-circle-plus{
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="header">
+                <div class="back">
+                    <a href="thucdon.html" class="button">
+                        <span><strong>Quay về menu</strong></span>
+                    </a>
+                </div>
+                <a href="index.html" class="logo">
+                    <img src="assets/KFC_Logo_chu.png" alt="KFC Logo" width="100">
+                </a>
+                <div id="actions">
+                    <div class="item">
+                        <span id="language-switcher" onclick="toggleLanguage()">English</span>
+                    </div>
+                    <div class="item">
+                        <a href="login.html">
+                            <img src="assets/user48px.png" alt="User" width="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="giua">
+            <div id="cart-wrapper">
+                <h1>Giỏ Hàng</h1>
+                <div id="giohang">
+                    
+                    
+                </div>
+                
+                
+                <br><br>
+                
+                <div id="checkout-info">
+                    <!-- <p><strong>Số lượng đã chọn:</strong> <span id="selected-quantity">0</span></p> -->
+                    
+                </div><br><br>
+                <button id="checkout-btn" onclick="xoafull()">Xóa tất cả</button>
+                
+            
+                
+            
+            </div>
+    
+            <div class="from_tongtien">
+                <div>
+                    <h2><span id="soMon"></span>MÓN</h2>
+                    <hr>
+                    <h4><strong>Bạn có Mã giảm giá?</strong></h3>
+                    <div class="magiamgia" >
+                        <input type="text" id="magiamgia" placeholder="Nhập mã giảm giá" >
+                        <button><Strong>Áp dụng</Strong></button><br><br>
+                    </div>
+                    
+                    <hr>
+                    <div class="tien">
+                        <p>Tổng đơn hàng <span id="tongtien">0₫</span></p>
+                        <p>Phí vận chuyển <span>10.000₫</span></p>
+                        <p><strong>Tổng thanh toán </strong> <strong><span id="tongthanhtoan">0₫</span></strong></p>
+
+                    </div>
+                    <hr>
+                    <a href="thanhtoan.html"><button class="thanhtoanbtn"><strong>Thanh toán</strong> <strong><span id="tongthanhtoanbtn">0₫</span></strong></button></a>
+                    
+
+                </div>
+            </div>
+
+        </div>
+    
+        
+    
+        <div id="footer">
+            <div class="mucluc">
+                <div class="widget">
+                    <h4>Danh Mục Món Ăn</h4>
+                    <ul>
+                        <li><a href="#mon-moi">Món Mới</a></li>
+                        <li><a href="#combo-1-nguoi">Combo 1 Người</a></li>
+                        <li><a href="#combo-nhom">Combo Nhóm</a></li>
+                        <li><a href="#ga-ran-ga-quay">Gà Rán - Gà Quay</a></li>
+                        <li><a href="#burger-com-mi-y">Burger - Cơm - Mì Ý</a></li>
+                        <li><a href="#thuc-an-nhe">Thức Ăn Nhẹ</a></li>
+                        <li><a href="#thuc-uong-trang-mieng">Thức Uống & Tráng Miệng</a></li>
+                    </ul>
+                </div>
+                <div class="widget">
+                    <h4>Về KFC</h4>
+                    <ul>
+                        <li><a href="#cau-chuyen-cua-chung-toi">Câu Chuyện Của Chúng Tôi</a></li>
+                        <li><a href="#tin-khuyen-mai">Tin Khuyến Mãi</a></li>
+                        <li><a href="#tin-tuc-kfc">Tin tức KFC</a></li>
+                        <li><a href="#tuyen-dung">Tuyển dụng</a></li>
+                        <li><a href="#dat-tiec-sinh-nhat">Đặt tiệc Sinh nhật</a></li>
+                    </ul>
+                </div>
+                <div class="widget">
+                    <h4>Liên hệ KFC</h4>
+                    <ul>
+                        <li><a href="#theo-doi-don-hang">Theo dõi đơn hàng</a></li>
+                        <li><a href="#he-thong-nha-hang">Hệ Thống Nhà Hàng</a></li>
+                        <li><a href="#lien-he-kfc-2">Liên hệ KFC</a></li>
+                    </ul>
+                </div>
+                <div class="widget">
+                    <h4>Chính sách</h4>
+                    <ul>
+                        <li><a href="#chinh-sach-hoat-dong">Chính sách hoạt động</a></li>
+                        <li><a href="#chinh-sach-va-quy-dinh">Chính sách và quy định</a></li>
+                        <li><a href="#chinh-sach-bao-mat-thong-tin">Chính sách bảo mật thông tin</a></li>
+                    </ul>
+                </div>
+                <div class="widget">
+                    <h4><strong>Download App</strong></h4>
+                    <a href="https://apps.apple.com/vn/app/kfc-vietnam/id562164615?l=en"><img src="assets/appstore2.png" alt="App Store" width="150"></a><br>
+                    <a href="https://play.google.com/store/apps/details?id=kfc.vietnam&hl=en&pli=1"><img src="assets/ggplay.png" alt="Google Play" width="150"></a>
+           
+                </div>
+                <div class="footer-bottom">
+                    <p>Copyright © 2023 KFC Vietnam</p>
+                </div>
+            </div>
+            
+        </div>
+        <div id="footer"><hr></div>
+            
+        <div id="footer">
+            <div class="thongtinLH">
+                <div class="box1">
+                    <h2 class="h1">CÔNG TY LIÊN DOANH TNHH KFC VIỆT NAM</h2>
+                    <br>
+                    <p>Số 292 Bà Triệu, P. Lê Đại Hành, Q. Hai Bà Trưng, TP. Hà Nội. </p>
+                    <p>Điện thoại: (028) 38489828</p>
+                    <p>Email: lienhe@kfcvietnam.com.vn</p>
+                    <p>Mã số thuế: 0100773885</p>
+                    <p>Ngày cấp: 29/10/1998 - Nơi cấp: Cục Thuế Thành Phố Hà Nội</p>
+                </div>
+                <div class="box2">
+                    <img src="assets/bo_cong_thuong.png" alt="" width="200px">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/giohang.js"></script>
+    
+    
+</body>
+</html>
+
