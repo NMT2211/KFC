@@ -21,10 +21,10 @@ function hienThiGioHang() {
                         <p class='mota'>${mota}</p>
                         <p>Số lượng: 
                             <i class="fa-solid fa-minus" onclick="giamSoLuong(${i})"></i>
-                            <input type="number" class="so-luong" min="1" value="${soLuong}" onchange="capNhatSoLuong(this, ${i})">
+                            <input type="number" class="so-luong" min="1" value="${soLuong}" readonly onchange="capNhatSoLuong(this, ${i})">
                             <i class="fa-solid fa-plus" onclick="tangSoLuong(${i})"></i>
                         </p>
-                        <p>Tiền: <span class="thanh-tien">${formatTien(thanhTien)}</span></p>
+                        <p>Thành Tiền: <span class="thanh-tien">${formatTien(thanhTien)}</span></p>
                         
                     </div>
                     <button onclick="xoaSanPham(${i})">Xóa</button>

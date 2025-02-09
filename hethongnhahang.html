@@ -14,6 +14,35 @@
         .shop__system{
             top: 0px;
         }
+       
+        
+        .item a{
+            text-decoration: none;
+        }
+
+
+        .item {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .item img {
+            display: block;
+        }
+
+        .badge {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+    
 
     </style>
 </head>
@@ -38,9 +67,11 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="giohang.html">
-                        <img src="assets/giohang48px.png" alt="Giỏ hàng" width="30">
+                    <a href="giohang.html" class="cart-container">
+                        <img src="assets/gio_hangicon.png" alt="Giỏ hàng" width="45">
+                        <span id="so_sp_giohang" class="badge">0</span>
                     </a>
+                    
                 </div>
                 <div class="item">
                     <img src="assets/search.png" alt="Search" width="30" id="search-icon" onclick="toggleSearch()">
@@ -139,7 +170,14 @@
     
 
 
-    <script src="js/trangchu.js">
+    <script >
+        let giohang = JSON.parse(localStorage.getItem('giohang')) || [];
+        let sospgiohang = 0 
+        for (let i = 0; i < giohang.length; i++) { 
+            sospgiohang += giohang[i].soLuong
+
+        }
+        document.getElementById('so_sp_giohang').innerHTML = sospgiohang
         
     </script>
     <script src="https://uhchat.net/code.php?f=d61efb"></script>

@@ -34,7 +34,7 @@ document.getElementById('uu-Dai-content').innerHTML = km
 
 let countdown = setInterval(
     function(){
-        let saleDateInput = new Date("2024-08-10 13:31:00").getTime()// Ngày kết thúc sale (thay
+        let saleDateInput = new Date("2024-10-21 13:31:00").getTime()// Ngày kết thúc sale (thay
         
         let newDate = new Date().getTime()// Ngày hiện tại
         let timeKM = saleDateInput - newDate;
@@ -798,6 +798,21 @@ function themvaogiohang(x) {
     
     // alert('Sản phẩm đã được thêm vào giỏ hàng!');
 
+    let sospgiohang = 0 
+    for (let i = 0; i < giohang.length; i++) { 
+        sospgiohang += giohang[i].soLuong
+
+    }
+    
+    document.getElementById('so_sp_giohang').innerHTML = sospgiohang
+    
+}
+
+let giohang = JSON.parse(localStorage.getItem('giohang')) || [];
+let sospgiohang = 0 
+for (let i = 0; i < giohang.length; i++) { 
+    sospgiohang += giohang[i].soLuong
 
 }
+document.getElementById('so_sp_giohang').innerHTML = sospgiohang
 

@@ -197,14 +197,23 @@ function themvaogiohang(x) {
     // Lưu giỏ hàng đã cập nhật vào localStorage dưới dạng chuỗi JSON
     localStorage.setItem('giohang', JSON.stringify(giohang));
 
-    let sospgiohang = giohang.length
+    let sospgiohang = 0 
+    for (let i = 0; i < giohang.length; i++) { 
+        sospgiohang += giohang[i].soLuong
+
+    }
     
     document.getElementById('so_sp_giohang').innerHTML = sospgiohang
     
 }
 
 let giohang = JSON.parse(localStorage.getItem('giohang')) || [];
-let sospgiohang = giohang.length
+let sospgiohang = 0 
+for (let i = 0; i < giohang.length; i++) { 
+    sospgiohang += giohang[i].soLuong
+
+}
+
 document.getElementById('so_sp_giohang').innerHTML = sospgiohang
 
 

@@ -144,10 +144,14 @@ body{
     display: flex;
     height: 50px;
     padding: 0;
-    gap: 20px; /* Khoảng cách giữa các liên kết */
-    overflow-x: auto; /* Cho phép cuộn ngang nếu nội dung vượt quá kích thước */
-    white-space: nowrap; /* Ngăn chữ bị xuống hàng */
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    
 }
+
+
+
 
 .menu-thucdon ul li {
     margin-right: 20px; /* Khoảng cách giữa các liên kết */
@@ -261,6 +265,7 @@ body{
     
     
 }
+
 
 
 .menu-combo2 {

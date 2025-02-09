@@ -10,13 +10,35 @@
     <link rel="stylesheet" href="css/trangchu.css">
     
     <style>
-        #so_sp_giohang{           
-            color: red;
-            font-size: 24px;
-        }
+        
         .item a{
             text-decoration: none;
         }
+
+
+        .item {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .item img {
+            display: block;
+        }
+
+        .badge {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        
+        
         
     </style>
 </head>
@@ -37,26 +59,30 @@
                 <div class="item"><span id="language-switcher" onclick="toggleLanguage()">English</span></div>
                 <div class="item">
                     <a href="login.html">
-                        <img src="assets/user48px.png" alt="User" width="30">
+                        <img src="assets/user48px.png" alt="User" width="35">
                     </a>
                 </div>
+                <a href="giohang.html" class="cart-container"></a>
                 <div class="item">
-                    <a href="giohang.html" class="cart-container">
-                        <img src="assets/giohang48px.png" alt="Giỏ hàng" width="30">
+                    
+                        <img src="assets/gio_hangicon.png" alt="Giỏ hàng" width="45">
                         <span id="so_sp_giohang" class="badge">0</span>
-                    </a>
+                    
                     
                 </div>
-                
+                </a>
                 <div class="item">
+                    
                     <img src="assets/search.png" alt="Search" width="30" id="search-icon" >
                 </div>
                 
             </div>
+
+            
             
         </div>
     </header>
-    
+
 
     <div id="wrapper">
         
@@ -94,6 +120,7 @@
         <div class="menu-combo">
             <h2 class="h2" align="left"><img src="assets/ong_gia_kfc.png" alt="Ông già KFC" width="30"> <strong>CÓ THỂ BẠN SẼ THÍCH MÓN NÀY</strong></h2>
             <hr class="h2">
+            
             <div class="menu-combo2" id="menu-combo2">
                 
             </div>

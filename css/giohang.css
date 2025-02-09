@@ -214,9 +214,13 @@ h1 {
 .magiamgia button {
     margin-left: 20px; /* Đặt khoảng cách giữa trường nhập liệu và nút */
     border-radius: 30px;
-    background-color: #303030; /* Màu nền */
+    background-color: #110a0a; /* Màu nền */
     color: white;
     padding: 8px 15px; /* Kích thước nút */
+}
+
+.magiamgia button:hover{
+    background-color: #3a3a3a; /* Màu nền khi di chuột qua**/
 }
 
 .tien p {
